@@ -3,6 +3,8 @@
     package="com.markazmoshavereh.kamyab.kerman1">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Markazmoshaverehkamyabkerman1">
-        <activity android:name=".destination" android:theme="@style/Theme.AppCompat.Light.Dialog"></activity>
+        <activity android:name=".MainActivity3"></activity>
+        <activity android:name=".MainActivity2" >
+
+
+        </activity>
+        <activity
+            android:name=".destination"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +28,5 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
 </manifest>
