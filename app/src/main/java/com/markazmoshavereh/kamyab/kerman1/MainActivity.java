@@ -2,6 +2,8 @@ package com.markazmoshavereh.kamyab.kerman1;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Context;
@@ -19,6 +21,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,6 +45,20 @@ public class MainActivity extends AppCompatActivity {
         Button btncancel = findViewById(R.id.btncancel);
         RadioButton ratman = findViewById(R.id.ratman);
         RadioButton ratwoman = findViewById(R.id.ratwoman);
+        RecyclerView recycler_view=findViewById(R.id.recycler_view);
+        ArrayList days=new ArrayList<String>();
+        days.add("شنبه");
+        days.add("یکشنبه");
+        days.add("دو شنبه");
+        days.add("سه شنبه");
+        days.add("چهار شنبه");
+        days.add("پنجشنبه");
+
+        adapter adapter=new adapter(days);
+        recycler_view.setAdapter(adapter);
+        recycler_view.setHasFixedSize(true);
+        GridLayoutManager gm = new GridLayoutManager(MainActivity.this,3,RecyclerView.VERTICAL,false);
+        recycler_view.setLayoutManager(gm);
 
         String name1=getSharedPreferences("user_profile", Context.MODE_PRIVATE).getString("name","نامشخص!");
         edtname.setText(name1);
