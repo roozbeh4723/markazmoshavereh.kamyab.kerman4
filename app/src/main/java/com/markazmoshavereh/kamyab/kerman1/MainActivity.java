@@ -2,6 +2,7 @@ package com.markazmoshavereh.kamyab.kerman1;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -53,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
         days.add("سه شنبه");
         days.add("چهار شنبه");
         days.add("پنجشنبه");
+        Intent intent1=new Intent(MainActivity.this,service_bf.class);
+        ContextCompat.startForegroundService(MainActivity.this,intent1);
+
 
         adapter adapter=new adapter(days);
         recycler_view.setAdapter(adapter);
