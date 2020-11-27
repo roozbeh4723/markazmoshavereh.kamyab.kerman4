@@ -39,7 +39,7 @@ public class service_bf extends Service {
           new Handler().postDelayed(new Runnable() {
               @Override
               public void run() {
-                  Toast.makeText(service_bf.this, "در حال بروز رسانی وقت های خالی!", Toast.LENGTH_SHORT).show();
+                 // Toast.makeText(service_bf.this, "در حال بروز رسانی وقت های خالی!", Toast.LENGTH_SHORT).show();
               }
           }, 4000);
   }

@@ -24,6 +24,11 @@
         </activity>
 
         <service android:name=".service_bf" />
+        <receiver android:name=".broadcast_reciver">
+            <intent-filter>
+                <action android:name="com.markazmoshavereh.kamyab.kerman1.Action_broadcast_testGE" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

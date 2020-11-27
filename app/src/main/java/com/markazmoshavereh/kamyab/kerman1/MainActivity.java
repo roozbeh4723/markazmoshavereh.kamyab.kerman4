@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
@@ -63,6 +64,18 @@ public class MainActivity extends AppCompatActivity {
         recycler_view.setHasFixedSize(true);
         GridLayoutManager gm = new GridLayoutManager(MainActivity.this,3,RecyclerView.VERTICAL,false);
         recycler_view.setLayoutManager(gm);
+
+
+        Intent intent=new Intent();
+        intent.setAction("com.markazmoshavereh.kamyab.kerman1.Action_broadcast_test");
+        intent.putExtra("broadcast","لیست وقت های خالی به روز رسانی شد");
+        sendBroadcast(intent);
+
+        broadcast_reciver br=new broadcast_reciver();
+        IntentFilter filter=new IntentFilter();
+        filter.addAction("com.markazmoshavereh.kamyab.kerman1.Action_broadcast_test");
+        registerReceiver(br, filter);
+
 
         String name1=getSharedPreferences("user_profile", Context.MODE_PRIVATE).getString("name","نامشخص!");
         edtname.setText(name1);
